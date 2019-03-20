@@ -9,7 +9,9 @@ class Company(models.Model):
     info = models.TextField()
 
 
+
 # 部门
+
 class Department(models.Model):
     name = models.CharField(max_length=50)
     info = models.TextField()
@@ -17,13 +19,19 @@ class Department(models.Model):
                                 related_name='departments')
 
 
+
 # 位置
+=======
+
 class Position(models.Model):
     name = models.CharField(max_length=50)
     info = models.TextField()
 
 
+
 # 个人信息
+=======
+
 class Profile(models.Model):
     GENDER_CHOICES = (
         ('male', "男"),
@@ -48,6 +56,7 @@ class Profile(models.Model):
 
 
 # 课程
+=======
 class Course(models.Model):
     name = models.CharField(max_length=100)
     info = models.TextField()
@@ -65,12 +74,14 @@ class Duty(models.Model):
 
 
 # 日志
+=======
 class Note(models.Model):
     starttime = models.DateTimeField()
     endtime = models.DateTimeField()
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE,
                                 related_name='notes')
     dutys = models.ManyToManyField(Duty, related_name='notes')
+
 
 
 # 文章
