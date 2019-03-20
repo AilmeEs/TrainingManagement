@@ -5,11 +5,7 @@ from django.views.generic import DetailView, ListView
 
 # Create your views here.
 def index(request):
-<<<<<<< HEAD
-    return render(request,'training/index.html')
 
-
-=======
     posts = Profile.objects.all()
     return render(request, 'training/index.html', {'posts': posts})
 
@@ -34,4 +30,3 @@ def post_delete(request, id):
 class PostDetail(DetailView):
     model = Post
     template_name = 'training/post_detail.html'
->>>>>>> 85977112aeca8e849c6085115b34d8d2da82b330
