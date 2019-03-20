@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除</title>
+</head>
+<body>
+<h2>培训公司管理系统</h2>
+<hr>
+<h3>{{ post.title }}</h3>
+<p><a href="{% url 'post_delete' post.id %}">删除</a>
+<small>作者：{{ post.auth }}/small>
+ <p>{{ post.content}}</p>
+</body>
+</html>
