@@ -3,31 +3,22 @@ from django.conf import settings
 
 
 # Create your models here.
-<<<<<<< HEAD
 #公司表
-=======
-# 公司
->>>>>>> 85977112aeca8e849c6085115b34d8d2da82b330
 class Company(models.Model):
     name = models.CharField(max_length=50)
     info = models.TextField()
 
-<<<<<<< HEAD
     def __str__(self):
         return self.name
-#部门表
-=======
 
 
 # 部门
 
->>>>>>> 85977112aeca8e849c6085115b34d8d2da82b330
 class Department(models.Model):
     name = models.CharField(max_length=50)
     info = models.TextField()
     company = models.ForeignKey(Company, on_delete=models.CASCADE,
                                 related_name='departments')
-<<<<<<< HEAD
     def __str__(self):
         return self.name
 #职位表
@@ -36,13 +27,10 @@ class Position(models.Model):
     info = models.TextField()
     def __str__(self):
         return self.name
-#人员信息表
-=======
 
 
 
 # 位置
-=======
 
 class Position(models.Model):
     name = models.CharField(max_length=50)
@@ -51,9 +39,7 @@ class Position(models.Model):
 
 
 # 个人信息
-=======
 
->>>>>>> 85977112aeca8e849c6085115b34d8d2da82b330
 class Profile(models.Model):
     GENDER_CHOICES = (
         ('male', "男"),
@@ -75,16 +61,11 @@ class Profile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL,
                                 on_delete=models.CASCADE,
                                 related_name='profile')
-<<<<<<< HEAD
     def __str__(self):
         return self.name
-#课程表
-=======
 
 
 # 课程
-=======
->>>>>>> 85977112aeca8e849c6085115b34d8d2da82b330
 class Course(models.Model):
     name = models.CharField(max_length=100)
     info = models.TextField()
@@ -96,20 +77,13 @@ class Course(models.Model):
     students = models.ForeignKey(Profile, on_delete=models.CASCADE,
                                  related_name='courses')
 
-<<<<<<< HEAD
 #考勤内容
-=======
 
->>>>>>> 85977112aeca8e849c6085115b34d8d2da82b330
 class Duty(models.Model):
     name = models.CharField(max_length=50)
 
 
-<<<<<<< HEAD
-=======
 # 日志
-=======
->>>>>>> 85977112aeca8e849c6085115b34d8d2da82b330
 class Note(models.Model):
     starttime = models.DateTimeField()
     endtime = models.DateTimeField()
@@ -118,26 +92,18 @@ class Note(models.Model):
     dutys = models.ManyToManyField(Duty, related_name='notes')
 
 
-<<<<<<< HEAD
-#/'公告
-=======
 
 # 文章
->>>>>>> 85977112aeca8e849c6085115b34d8d2da82b330
 class Post(models.Model):
     title = models.CharField(max_length=50)
     content = models.TextField()
     auth = models.ForeignKey(Profile, on_delete=models.CASCADE,
                              related_name='posts')
-<<<<<<< HEAD
     def __str__(self):
         return self.title
-#日志
-=======
 
 
 # 登陆
->>>>>>> 85977112aeca8e849c6085115b34d8d2da82b330
 class Logging(models.Model):
     login = models.DateTimeField()
     logout = models.DateTimeField()
