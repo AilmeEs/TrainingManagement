@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h2>培训公司管理系统</h2>
+<hr>
+{% for object in object_list %}
+    <h3><a href="{% url 'post_detail' object.pk %}">{{ object.title }}</a></h3>
+{% endfor %}
+    pass
+</body>
+</html>
