@@ -3,10 +3,14 @@ from django.conf import settings
 
 
 # Create your models here.
+# 公司
 class Company(models.Model):
     name = models.CharField(max_length=50)
     info = models.TextField()
 
+
+
+# 部门
 
 class Department(models.Model):
     name = models.CharField(max_length=50)
@@ -15,10 +19,18 @@ class Department(models.Model):
                                 related_name='departments')
 
 
+
+# 位置
+=======
+
 class Position(models.Model):
     name = models.CharField(max_length=50)
     info = models.TextField()
 
+
+
+# 个人信息
+=======
 
 class Profile(models.Model):
     GENDER_CHOICES = (
@@ -43,6 +55,8 @@ class Profile(models.Model):
                                 related_name='profile')
 
 
+# 课程
+=======
 class Course(models.Model):
     name = models.CharField(max_length=100)
     info = models.TextField()
@@ -59,6 +73,8 @@ class Duty(models.Model):
     name = models.CharField(max_length=50)
 
 
+# 日志
+=======
 class Note(models.Model):
     starttime = models.DateTimeField()
     endtime = models.DateTimeField()
@@ -67,6 +83,8 @@ class Note(models.Model):
     dutys = models.ManyToManyField(Duty, related_name='notes')
 
 
+
+# 文章
 class Post(models.Model):
     title = models.CharField(max_length=50)
     content = models.TextField()
@@ -74,6 +92,7 @@ class Post(models.Model):
                              related_name='posts')
 
 
+# 登陆
 class Logging(models.Model):
     login = models.DateTimeField()
     logout = models.DateTimeField()

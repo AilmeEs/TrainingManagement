@@ -6,6 +6,12 @@
 </head>
 <body>
 欢迎光临本系统
+<br>
+{% for post in posts %}
+    <a href="{% url 'po_list' post.id%}">{{ post.name }}</a>
+    <p>{{ post.publish|date:'Y-m-d H:i:s' }}</p>
+{% endfor %}
+
+
 </body>
 </html>
-# 辣鸡
